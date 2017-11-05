@@ -58,9 +58,17 @@ func main() {
 
 		fmt.Fprintf(f, `
 // HTTP %d %s
-func %s(message ...string) *HTTPError {
+func New%s(message ...string) *HTTPError {
 	return New(http.Status%s, message...)
 }
 `, i, name, shortName, shortName)
+
+		fmt.Fprintf(f, `
+// HTTP %d %s
+func %s(err error) *HTTPError {
+	return Wrap(http.Status%s, err)
+}
+`, i, name, shortName, shortName)
+
 	}
 }

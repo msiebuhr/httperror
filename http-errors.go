@@ -30,6 +30,11 @@ func New(code int, message ...string) *HTTPError {
 	}
 }
 
+// Wraps an existing error in a HTTPError
+func Wrap(code int, err error) *HTTPError {
+	return &HTTPError{Code: code, Message: err.Error()}
+}
+
 // IsHTTPError returns the error and true if the provided error is an
 // HTTPError. Otherwise, it returns an empty object and false.
 func IsHTTPError(err error) (HTTPError, bool) {
