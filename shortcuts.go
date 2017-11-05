@@ -8,7 +8,7 @@ func NewContinue(message ...string) *HTTPError {
 }
 
 // HTTP 100 Continue
-func Continue(err error) *HTTPError {
+func WrapContinue(err error) *HTTPError {
 	return Wrap(http.StatusContinue, err)
 }
 
@@ -18,7 +18,7 @@ func NewSwitchingProtocols(message ...string) *HTTPError {
 }
 
 // HTTP 101 Switching Protocols
-func SwitchingProtocols(err error) *HTTPError {
+func WrapSwitchingProtocols(err error) *HTTPError {
 	return Wrap(http.StatusSwitchingProtocols, err)
 }
 
@@ -28,7 +28,7 @@ func NewProcessing(message ...string) *HTTPError {
 }
 
 // HTTP 102 Processing
-func Processing(err error) *HTTPError {
+func WrapProcessing(err error) *HTTPError {
 	return Wrap(http.StatusProcessing, err)
 }
 
@@ -38,7 +38,7 @@ func NewOK(message ...string) *HTTPError {
 }
 
 // HTTP 200 OK
-func OK(err error) *HTTPError {
+func WrapOK(err error) *HTTPError {
 	return Wrap(http.StatusOK, err)
 }
 
@@ -48,7 +48,7 @@ func NewCreated(message ...string) *HTTPError {
 }
 
 // HTTP 201 Created
-func Created(err error) *HTTPError {
+func WrapCreated(err error) *HTTPError {
 	return Wrap(http.StatusCreated, err)
 }
 
@@ -58,7 +58,7 @@ func NewAccepted(message ...string) *HTTPError {
 }
 
 // HTTP 202 Accepted
-func Accepted(err error) *HTTPError {
+func WrapAccepted(err error) *HTTPError {
 	return Wrap(http.StatusAccepted, err)
 }
 
@@ -68,7 +68,7 @@ func NewNonAuthoritativeInfo(message ...string) *HTTPError {
 }
 
 // HTTP 203 NonAuthoritativeInfo
-func NonAuthoritativeInfo(err error) *HTTPError {
+func WrapNonAuthoritativeInfo(err error) *HTTPError {
 	return Wrap(http.StatusNonAuthoritativeInfo, err)
 }
 
@@ -78,7 +78,7 @@ func NewNoContent(message ...string) *HTTPError {
 }
 
 // HTTP 204 No Content
-func NoContent(err error) *HTTPError {
+func WrapNoContent(err error) *HTTPError {
 	return Wrap(http.StatusNoContent, err)
 }
 
@@ -88,7 +88,7 @@ func NewResetContent(message ...string) *HTTPError {
 }
 
 // HTTP 205 Reset Content
-func ResetContent(err error) *HTTPError {
+func WrapResetContent(err error) *HTTPError {
 	return Wrap(http.StatusResetContent, err)
 }
 
@@ -98,7 +98,7 @@ func NewPartialContent(message ...string) *HTTPError {
 }
 
 // HTTP 206 Partial Content
-func PartialContent(err error) *HTTPError {
+func WrapPartialContent(err error) *HTTPError {
 	return Wrap(http.StatusPartialContent, err)
 }
 
@@ -108,7 +108,7 @@ func NewMultiStatus(message ...string) *HTTPError {
 }
 
 // HTTP 207 Multi-Status
-func MultiStatus(err error) *HTTPError {
+func WrapMultiStatus(err error) *HTTPError {
 	return Wrap(http.StatusMultiStatus, err)
 }
 
@@ -118,7 +118,7 @@ func NewAlreadyReported(message ...string) *HTTPError {
 }
 
 // HTTP 208 Already Reported
-func AlreadyReported(err error) *HTTPError {
+func WrapAlreadyReported(err error) *HTTPError {
 	return Wrap(http.StatusAlreadyReported, err)
 }
 
@@ -128,7 +128,7 @@ func NewIMUsed(message ...string) *HTTPError {
 }
 
 // HTTP 226 IM Used
-func IMUsed(err error) *HTTPError {
+func WrapIMUsed(err error) *HTTPError {
 	return Wrap(http.StatusIMUsed, err)
 }
 
@@ -138,7 +138,7 @@ func NewMultipleChoices(message ...string) *HTTPError {
 }
 
 // HTTP 300 Multiple Choices
-func MultipleChoices(err error) *HTTPError {
+func WrapMultipleChoices(err error) *HTTPError {
 	return Wrap(http.StatusMultipleChoices, err)
 }
 
@@ -148,7 +148,7 @@ func NewMovedPermanently(message ...string) *HTTPError {
 }
 
 // HTTP 301 Moved Permanently
-func MovedPermanently(err error) *HTTPError {
+func WrapMovedPermanently(err error) *HTTPError {
 	return Wrap(http.StatusMovedPermanently, err)
 }
 
@@ -158,7 +158,7 @@ func NewFound(message ...string) *HTTPError {
 }
 
 // HTTP 302 Found
-func Found(err error) *HTTPError {
+func WrapFound(err error) *HTTPError {
 	return Wrap(http.StatusFound, err)
 }
 
@@ -168,7 +168,7 @@ func NewSeeOther(message ...string) *HTTPError {
 }
 
 // HTTP 303 See Other
-func SeeOther(err error) *HTTPError {
+func WrapSeeOther(err error) *HTTPError {
 	return Wrap(http.StatusSeeOther, err)
 }
 
@@ -178,7 +178,7 @@ func NewNotModified(message ...string) *HTTPError {
 }
 
 // HTTP 304 Not Modified
-func NotModified(err error) *HTTPError {
+func WrapNotModified(err error) *HTTPError {
 	return Wrap(http.StatusNotModified, err)
 }
 
@@ -188,7 +188,7 @@ func NewUseProxy(message ...string) *HTTPError {
 }
 
 // HTTP 305 Use Proxy
-func UseProxy(err error) *HTTPError {
+func WrapUseProxy(err error) *HTTPError {
 	return Wrap(http.StatusUseProxy, err)
 }
 
@@ -198,7 +198,7 @@ func NewTemporaryRedirect(message ...string) *HTTPError {
 }
 
 // HTTP 307 Temporary Redirect
-func TemporaryRedirect(err error) *HTTPError {
+func WrapTemporaryRedirect(err error) *HTTPError {
 	return Wrap(http.StatusTemporaryRedirect, err)
 }
 
@@ -208,7 +208,7 @@ func NewPermanentRedirect(message ...string) *HTTPError {
 }
 
 // HTTP 308 Permanent Redirect
-func PermanentRedirect(err error) *HTTPError {
+func WrapPermanentRedirect(err error) *HTTPError {
 	return Wrap(http.StatusPermanentRedirect, err)
 }
 
@@ -218,7 +218,7 @@ func NewBadRequest(message ...string) *HTTPError {
 }
 
 // HTTP 400 Bad Request
-func BadRequest(err error) *HTTPError {
+func WrapBadRequest(err error) *HTTPError {
 	return Wrap(http.StatusBadRequest, err)
 }
 
@@ -228,7 +228,7 @@ func NewUnauthorized(message ...string) *HTTPError {
 }
 
 // HTTP 401 Unauthorized
-func Unauthorized(err error) *HTTPError {
+func WrapUnauthorized(err error) *HTTPError {
 	return Wrap(http.StatusUnauthorized, err)
 }
 
@@ -238,7 +238,7 @@ func NewPaymentRequired(message ...string) *HTTPError {
 }
 
 // HTTP 402 Payment Required
-func PaymentRequired(err error) *HTTPError {
+func WrapPaymentRequired(err error) *HTTPError {
 	return Wrap(http.StatusPaymentRequired, err)
 }
 
@@ -248,7 +248,7 @@ func NewForbidden(message ...string) *HTTPError {
 }
 
 // HTTP 403 Forbidden
-func Forbidden(err error) *HTTPError {
+func WrapForbidden(err error) *HTTPError {
 	return Wrap(http.StatusForbidden, err)
 }
 
@@ -258,7 +258,7 @@ func NewNotFound(message ...string) *HTTPError {
 }
 
 // HTTP 404 Not Found
-func NotFound(err error) *HTTPError {
+func WrapNotFound(err error) *HTTPError {
 	return Wrap(http.StatusNotFound, err)
 }
 
@@ -268,7 +268,7 @@ func NewMethodNotAllowed(message ...string) *HTTPError {
 }
 
 // HTTP 405 Method Not Allowed
-func MethodNotAllowed(err error) *HTTPError {
+func WrapMethodNotAllowed(err error) *HTTPError {
 	return Wrap(http.StatusMethodNotAllowed, err)
 }
 
@@ -278,7 +278,7 @@ func NewNotAcceptable(message ...string) *HTTPError {
 }
 
 // HTTP 406 Not Acceptable
-func NotAcceptable(err error) *HTTPError {
+func WrapNotAcceptable(err error) *HTTPError {
 	return Wrap(http.StatusNotAcceptable, err)
 }
 
@@ -288,7 +288,7 @@ func NewProxyAuthRequired(message ...string) *HTTPError {
 }
 
 // HTTP 407 ProxyAuthRequired
-func ProxyAuthRequired(err error) *HTTPError {
+func WrapProxyAuthRequired(err error) *HTTPError {
 	return Wrap(http.StatusProxyAuthRequired, err)
 }
 
@@ -298,7 +298,7 @@ func NewRequestTimeout(message ...string) *HTTPError {
 }
 
 // HTTP 408 Request Timeout
-func RequestTimeout(err error) *HTTPError {
+func WrapRequestTimeout(err error) *HTTPError {
 	return Wrap(http.StatusRequestTimeout, err)
 }
 
@@ -308,7 +308,7 @@ func NewConflict(message ...string) *HTTPError {
 }
 
 // HTTP 409 Conflict
-func Conflict(err error) *HTTPError {
+func WrapConflict(err error) *HTTPError {
 	return Wrap(http.StatusConflict, err)
 }
 
@@ -318,7 +318,7 @@ func NewGone(message ...string) *HTTPError {
 }
 
 // HTTP 410 Gone
-func Gone(err error) *HTTPError {
+func WrapGone(err error) *HTTPError {
 	return Wrap(http.StatusGone, err)
 }
 
@@ -328,7 +328,7 @@ func NewLengthRequired(message ...string) *HTTPError {
 }
 
 // HTTP 411 Length Required
-func LengthRequired(err error) *HTTPError {
+func WrapLengthRequired(err error) *HTTPError {
 	return Wrap(http.StatusLengthRequired, err)
 }
 
@@ -338,7 +338,7 @@ func NewPreconditionFailed(message ...string) *HTTPError {
 }
 
 // HTTP 412 Precondition Failed
-func PreconditionFailed(err error) *HTTPError {
+func WrapPreconditionFailed(err error) *HTTPError {
 	return Wrap(http.StatusPreconditionFailed, err)
 }
 
@@ -348,7 +348,7 @@ func NewRequestEntityTooLarge(message ...string) *HTTPError {
 }
 
 // HTTP 413 Request Entity Too Large
-func RequestEntityTooLarge(err error) *HTTPError {
+func WrapRequestEntityTooLarge(err error) *HTTPError {
 	return Wrap(http.StatusRequestEntityTooLarge, err)
 }
 
@@ -358,7 +358,7 @@ func NewRequestURITooLong(message ...string) *HTTPError {
 }
 
 // HTTP 414 Request URI Too Long
-func RequestURITooLong(err error) *HTTPError {
+func WrapRequestURITooLong(err error) *HTTPError {
 	return Wrap(http.StatusRequestURITooLong, err)
 }
 
@@ -368,7 +368,7 @@ func NewUnsupportedMediaType(message ...string) *HTTPError {
 }
 
 // HTTP 415 Unsupported Media Type
-func UnsupportedMediaType(err error) *HTTPError {
+func WrapUnsupportedMediaType(err error) *HTTPError {
 	return Wrap(http.StatusUnsupportedMediaType, err)
 }
 
@@ -378,7 +378,7 @@ func NewRequestedRangeNotSatisfiable(message ...string) *HTTPError {
 }
 
 // HTTP 416 Requested Range Not Satisfiable
-func RequestedRangeNotSatisfiable(err error) *HTTPError {
+func WrapRequestedRangeNotSatisfiable(err error) *HTTPError {
 	return Wrap(http.StatusRequestedRangeNotSatisfiable, err)
 }
 
@@ -388,7 +388,7 @@ func NewExpectationFailed(message ...string) *HTTPError {
 }
 
 // HTTP 417 Expectation Failed
-func ExpectationFailed(err error) *HTTPError {
+func WrapExpectationFailed(err error) *HTTPError {
 	return Wrap(http.StatusExpectationFailed, err)
 }
 
@@ -398,7 +398,7 @@ func NewTeapot(message ...string) *HTTPError {
 }
 
 // HTTP 418 Teapot
-func Teapot(err error) *HTTPError {
+func WrapTeapot(err error) *HTTPError {
 	return Wrap(http.StatusTeapot, err)
 }
 
@@ -408,7 +408,7 @@ func NewUnprocessableEntity(message ...string) *HTTPError {
 }
 
 // HTTP 422 Unprocessable Entity
-func UnprocessableEntity(err error) *HTTPError {
+func WrapUnprocessableEntity(err error) *HTTPError {
 	return Wrap(http.StatusUnprocessableEntity, err)
 }
 
@@ -418,7 +418,7 @@ func NewLocked(message ...string) *HTTPError {
 }
 
 // HTTP 423 Locked
-func Locked(err error) *HTTPError {
+func WrapLocked(err error) *HTTPError {
 	return Wrap(http.StatusLocked, err)
 }
 
@@ -428,7 +428,7 @@ func NewFailedDependency(message ...string) *HTTPError {
 }
 
 // HTTP 424 Failed Dependency
-func FailedDependency(err error) *HTTPError {
+func WrapFailedDependency(err error) *HTTPError {
 	return Wrap(http.StatusFailedDependency, err)
 }
 
@@ -438,7 +438,7 @@ func NewUpgradeRequired(message ...string) *HTTPError {
 }
 
 // HTTP 426 Upgrade Required
-func UpgradeRequired(err error) *HTTPError {
+func WrapUpgradeRequired(err error) *HTTPError {
 	return Wrap(http.StatusUpgradeRequired, err)
 }
 
@@ -448,7 +448,7 @@ func NewPreconditionRequired(message ...string) *HTTPError {
 }
 
 // HTTP 428 Precondition Required
-func PreconditionRequired(err error) *HTTPError {
+func WrapPreconditionRequired(err error) *HTTPError {
 	return Wrap(http.StatusPreconditionRequired, err)
 }
 
@@ -458,7 +458,7 @@ func NewTooManyRequests(message ...string) *HTTPError {
 }
 
 // HTTP 429 Too Many Requests
-func TooManyRequests(err error) *HTTPError {
+func WrapTooManyRequests(err error) *HTTPError {
 	return Wrap(http.StatusTooManyRequests, err)
 }
 
@@ -468,7 +468,7 @@ func NewRequestHeaderFieldsTooLarge(message ...string) *HTTPError {
 }
 
 // HTTP 431 Request Header Fields Too Large
-func RequestHeaderFieldsTooLarge(err error) *HTTPError {
+func WrapRequestHeaderFieldsTooLarge(err error) *HTTPError {
 	return Wrap(http.StatusRequestHeaderFieldsTooLarge, err)
 }
 
@@ -478,7 +478,7 @@ func NewUnavailableForLegalReasons(message ...string) *HTTPError {
 }
 
 // HTTP 451 Unavailable For Legal Reasons
-func UnavailableForLegalReasons(err error) *HTTPError {
+func WrapUnavailableForLegalReasons(err error) *HTTPError {
 	return Wrap(http.StatusUnavailableForLegalReasons, err)
 }
 
@@ -488,7 +488,7 @@ func NewInternalServerError(message ...string) *HTTPError {
 }
 
 // HTTP 500 Internal Server Error
-func InternalServerError(err error) *HTTPError {
+func WrapInternalServerError(err error) *HTTPError {
 	return Wrap(http.StatusInternalServerError, err)
 }
 
@@ -498,7 +498,7 @@ func NewNotImplemented(message ...string) *HTTPError {
 }
 
 // HTTP 501 Not Implemented
-func NotImplemented(err error) *HTTPError {
+func WrapNotImplemented(err error) *HTTPError {
 	return Wrap(http.StatusNotImplemented, err)
 }
 
@@ -508,7 +508,7 @@ func NewBadGateway(message ...string) *HTTPError {
 }
 
 // HTTP 502 Bad Gateway
-func BadGateway(err error) *HTTPError {
+func WrapBadGateway(err error) *HTTPError {
 	return Wrap(http.StatusBadGateway, err)
 }
 
@@ -518,7 +518,7 @@ func NewServiceUnavailable(message ...string) *HTTPError {
 }
 
 // HTTP 503 Service Unavailable
-func ServiceUnavailable(err error) *HTTPError {
+func WrapServiceUnavailable(err error) *HTTPError {
 	return Wrap(http.StatusServiceUnavailable, err)
 }
 
@@ -528,7 +528,7 @@ func NewGatewayTimeout(message ...string) *HTTPError {
 }
 
 // HTTP 504 Gateway Timeout
-func GatewayTimeout(err error) *HTTPError {
+func WrapGatewayTimeout(err error) *HTTPError {
 	return Wrap(http.StatusGatewayTimeout, err)
 }
 
@@ -538,7 +538,7 @@ func NewHTTPVersionNotSupported(message ...string) *HTTPError {
 }
 
 // HTTP 505 HTTP Version Not Supported
-func HTTPVersionNotSupported(err error) *HTTPError {
+func WrapHTTPVersionNotSupported(err error) *HTTPError {
 	return Wrap(http.StatusHTTPVersionNotSupported, err)
 }
 
@@ -548,7 +548,7 @@ func NewVariantAlsoNegotiates(message ...string) *HTTPError {
 }
 
 // HTTP 506 Variant Also Negotiates
-func VariantAlsoNegotiates(err error) *HTTPError {
+func WrapVariantAlsoNegotiates(err error) *HTTPError {
 	return Wrap(http.StatusVariantAlsoNegotiates, err)
 }
 
@@ -558,7 +558,7 @@ func NewInsufficientStorage(message ...string) *HTTPError {
 }
 
 // HTTP 507 Insufficient Storage
-func InsufficientStorage(err error) *HTTPError {
+func WrapInsufficientStorage(err error) *HTTPError {
 	return Wrap(http.StatusInsufficientStorage, err)
 }
 
@@ -568,7 +568,7 @@ func NewLoopDetected(message ...string) *HTTPError {
 }
 
 // HTTP 508 Loop Detected
-func LoopDetected(err error) *HTTPError {
+func WrapLoopDetected(err error) *HTTPError {
 	return Wrap(http.StatusLoopDetected, err)
 }
 
@@ -578,7 +578,7 @@ func NewNotExtended(message ...string) *HTTPError {
 }
 
 // HTTP 510 Not Extended
-func NotExtended(err error) *HTTPError {
+func WrapNotExtended(err error) *HTTPError {
 	return Wrap(http.StatusNotExtended, err)
 }
 
@@ -588,6 +588,6 @@ func NewNetworkAuthenticationRequired(message ...string) *HTTPError {
 }
 
 // HTTP 511 Network Authentication Required
-func NetworkAuthenticationRequired(err error) *HTTPError {
+func WrapNetworkAuthenticationRequired(err error) *HTTPError {
 	return Wrap(http.StatusNetworkAuthenticationRequired, err)
 }
